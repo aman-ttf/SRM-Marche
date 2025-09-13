@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRM Marché - Second Hand Items for Students</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="navbar-brand">
+                    <h2>SRM Marché</h2>
+                    <span class="navbar-subtitle">Ghaziabad Campus</span>
+                </div>
+
+                <div class="navbar-search">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Search items..." class="search-input">
+                        <button id="searchBtn" class="search-btn">🔍</button>
+                    </div>
+                </div>
+
+                <div class="navbar-actions">
+                    <button id="postItemBtn" class="btn btn--primary btn--sm">+ Post Item</button>
+                    <button id="askItemBtn" class="btn btn--secondary btn--sm">💬 Ask for Item</button>
+                    <button id="loginBtn" class="btn btn--outline btn--sm auth-btn">Login</button>
+                    <div id="userMenu" class="user-menu hidden">
+                        <button id="userMenuBtn" class="user-menu-btn">
+                            <span id="userName">User</span>
+                        </button>
+                        <div id="userDropdown" class="user-dropdown hidden">
+                            <a href="#" id="profileBtn">Profile</a>
+                            <a href="#" id="myItemsBtn">My Items</a>
+                            <a href="#" id="myAsksBtn">My Asks</a>
+                            <a href="#" id="wishlistBtn">Wishlist</a>
+                            <a href="#" id="logoutBtn">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Buy & Sell Second Hand Items</h1>
+                    <p class="hero-description">SRM Institute Ghaziabad's trusted marketplace for students</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number" id="registeredUsers">0</span>
+                            <span class="stat-label">Registered Users</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" id="totalItems">0</span>
+                            <span class="stat-label">Items Listed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" id="totalAsks">0</span>
+                            <span class="stat-label">Items Requested</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Content Tabs -->
+            <div class="content-tabs">
+                <button id="itemsTab" class="tab-btn tab-btn--active">🛍️ Items for Sale</button>
+                <button id="asksTab" class="tab-btn">💬 Item Requests</button>
+            </div>
+
+            <!-- Items Section -->
+            <section id="itemsSection" class="content-section">
+                <!-- Filters -->
+                <div class="filters">
+                    <div class="filters-row">
+                        <select id="categoryFilter" class="filter-select">
+                            <option value="">All Categories</option>
+                        </select>
+
+                        <select id="conditionFilter" class="filter-select">
+                            <option value="">All Conditions</option>
+                            <option value="New">New</option>
+                            <option value="Like New">Like New</option>
+                            <option value="Good">Good</option>
+                            <option value="Fair">Fair</option>
+                            <option value="Poor">Poor</option>
+                        </select>
+
+                        <select id="priceFilter" class="filter-select">
+                            <option value="">All Prices</option>
+                            <option value="0-500">₹0 - ₹500</option>
+                            <option value="500-1000">₹500 - ₹1,000</option>
+                            <option value="1000-5000">₹1,000 - ₹5,000</option>
+                            <option value="5000-10000">₹5,000 - ₹10,000</option>
+                            <option value="10000-50000">₹10,000+</option>
+                        </select>
+
+                        <select id="sortFilter" class="filter-select">
+                            <option value="newest">Newest First</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="popular">Most Popular</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div class="categories" id="categoriesContainer">
+                    <!-- Categories will be populated by JavaScript -->
+                </div>
+
+                <!-- Items Grid -->
+                <div class="items-grid" id="itemsGrid">
+                    <!-- Items will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Asks Section -->
+            <section id="asksSection" class="content-section hidden">
+                <div class="section-header">
+                    <h2>Item Requests</h2>
+                    <p>Students looking for specific items</p>
+                </div>
+
+                <!-- Asks Grid -->
+                <div class="asks-grid" id="asksGrid">
+                    <!-- Asks will be populated by JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>SRM Marché</h3>
+                    <p>Made by <strong>Code Cubs - Aman & Amrit</strong> for <strong>Hyperthon-2025</strong></p>
+                    <p>SRM Institute of Science & Technology, Ghaziabad</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Login to SRM Marché</h2>
+                <button class="modal-close" onclick="marketplace.closeModal('loginModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Student Email</label>
+                        <input type="email" id="loginEmail" required placeholder="your.name@srmist.edu.in">
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full">Login</button>
+                </form>
+                <p class="modal-footer-text">
+                    Don't have an account? 
+                    <a href="#" id="switchToRegister">Register here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Register for SRM Marché</h2>
+                <button class="modal-close" onclick="marketplace.closeModal('registerModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="registerName">Full Name</label>
+                        <input type="text" id="registerName" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Student Email</label>
+                        <input type="email" id="registerEmail" required placeholder="your.name@srmist.edu.in">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPhone">Phone Number</label>
+                        <input type="tel" id="registerPhone" required placeholder="+91 9876543210">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerHostel">Hostel/Location</label>
+                        <select id="registerHostel" required>
+                            <option value="">Select Location</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <input type="password" id="registerPassword" required placeholder="Create a password">
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full">Register</button>
+                </form>
+                <p class="modal-footer-text">
+                    Already have an account? 
+                    <a href="#" id="switchToLogin">Login here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div id="profileModal" class="modal hidden">
+        <div class="modal-content modal-content--large">
+            <div class="modal-header">
+                <h2>My Profile</h2>
+                <button class="modal-close" onclick="marketplace.closeModal('profileModal')">&times;</button>
+            </div>
+            <div class="modal-body" id="profileBody">
+                <!-- Profile content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- My Items Modal -->
+    <div id="myItemsModal" class="modal hidden">
+        <div class="modal-content modal-content--large">
+            <div class="modal-header">
+                <h2>My Items</h2>
+                <button class="modal-close" onclick="marketplace.closeModal('myItemsModal')">&times;</button>
+            </div>
+            <div class="modal-body" id="myItemsBody">
+                <!-- My items content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- My Asks Modal -->
+    <div id="myAsksModal" class="modal hidden">
+        <div class="modal-content modal-content--large">
+            <div class="modal-header">
+                <h2>My Requests</h2>
+                <button class="modal-close" onclick="marketplace.closeModal('myAsksModal')">&times;</button>
+            </div>
+            <div class="modal-body" id="myAsksBody">
+                <!-- My asks content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Wishlist Modal -->
+    <div id="wishlistModal" class="modal hidden">
+        <div class="modal-content modal-content--large">
+            <div class="modal-header">
+                <h2>My Wishlist</h2>
+                <button class="modal-close" onclick="marketplace.closeModal('wishlistModal')">&times;</button>
+            </div>
+            <div class="modal-body" id="wishlistBody">
+                <!-- Wishlist content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Post Item Modal -->
+    <div id="postItemModal" class="modal hidden">
+        <div class="modal-content modal-content--large">
+            <div class="modal-header">
+                <h2>Post Item for Sale</h2>
+                <button class="modal-close" onclick="marketplace.closeModal('postItemModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="postItemForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="itemTitle">Item Name *</label>
+                            <input type="text" id="itemTitle" required placeholder="e.g., Data Structures Textbook">
+                        </div>
+                        <div class="form-group">
+                            <label for="itemCategory">Category *</label>
+                            <select id="itemCategory" required>
+                                <option value="">Select Category</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="itemPrice">Price (₹) *</label>
+                            <input type="number" id="itemPrice" required min="0" placeholder="450">
+                        </div>
+                        <div class="form-group">
+                            <label for="itemOriginalPrice">Original Price (₹)</label>
+                            <input type="number" id="itemOriginalPrice" min="0" placeholder="799">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="itemCondition">Condition *</label>
+                            <select id="itemCondition" required>
+                                <option value="">Select Condition</option>
+                                <option value="New">New</option>
+                                <option value="Like New">Like New</option>
+                                <option value="Good">Good</option>
+                                <option value="Fair">Fair</option>
+                                <option value="Poor">Poor</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="itemLocation">Campus Location *</label>
+                            <select id="itemLocation" required>
+                                <option value="">Select Location</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemDescription">Description *</label>
+                        <textarea id="itemDescription" required rows="4" placeholder="Describe the item, its condition, and any additional details..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemImages">Images</label>
+                        <div class="image-upload">
+                            <input type="file" id="itemImages" multiple accept="image/*" class="image-upload-input">
+                            <div class="image-upload-area">
+                                <p>📷 Click to upload or drag and drop images</p>
+                                <small>PNG, JPG, JPEG up to 5MB each</small>
+                            </div>
+                            <div id="imagePreview" class="image-preview"></div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--full">Post Item</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ask Item Modal -->
+    <div id="askItemModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Ask for an Item</h2>
+                <button class="modal-close" onclick="marketplace.closeModal('askItemModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="askItemForm">
+                    <div class="form-group">
+                        <label for="askTitle">What are you looking for? *</label>
+                        <input type="text" id="askTitle" required placeholder="e.g., Engineering Mathematics Textbook">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="askCategory">Category *</label>
+                        <select id="askCategory" required>
+                            <option value="">Select Category</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="askBudget">Budget (₹)</label>
+                            <input type="number" id="askBudget" min="0" placeholder="500">
+                        </div>
+                        <div class="form-group">
+                            <label for="askUrgency">Urgency</label>
+                            <select id="askUrgency">
+                                <option value="Low">Low - Can wait</option>
+                                <option value="Medium" selected>Medium - Need soon</option>
+                                <option value="High">High - Urgent</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="askDescription">Description *</label>
+                        <textarea id="askDescription" required rows="4" placeholder="Describe what you're looking for, specific requirements, preferred condition, etc..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--full">Post Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Item Detail Modal -->
+    <div id="itemDetailModal" class="modal hidden">
+        <div class="modal-content modal-content--large">
+            <div class="modal-header">
+                <h2 id="itemDetailTitle">Item Details</h2>
+                <button class="modal-close" onclick="marketplace.closeModal('itemDetailModal')">&times;</button>
+            </div>
+            <div class="modal-body" id="itemDetailBody">
+                <!-- Item details will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Ask Detail Modal -->
+    <div id="askDetailModal" class="modal hidden">
+        <div class="modal-content modal-content--large">
+            <div class="modal-header">
+                <h2 id="askDetailTitle">Request Details</h2>
+                <button class="modal-close" onclick="marketplace.closeModal('askDetailModal')">&times;</button>
+            </div>
+            <div class="modal-body" id="askDetailBody">
+                <!-- Ask details will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div id="messageContainer" class="message-container hidden">
+        <div id="messageContent" class="message">
+            <span id="messageText"></span>
+            <button id="messageClose" class="message-close">&times;</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
