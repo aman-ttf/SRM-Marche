@@ -386,9 +386,9 @@ Perfect for educational and hackathon projects
 
 ### **🌟 Star this repository if you found it helpful!**
 
-[![GitHub stars](https://img.shields.io/github/stars/your-username/srm-marche?style=social&label=Star)](https://github.com/your-username/srm-marche/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/your-username/srm-marche?style=social&label=Fork)](https://github.com/your-username/srm-marche/network/members)
-[![GitHub watchers](https://img.shields.io/github/watchers/your-username/srm-marche?style=social&label=Watch)](https://github.com/your-username/srm-marche/watchers)
+[![GitHub stars](https://img.shields.io/github/stars/your-username/srm-marche?style=social&label=Star)](https://github.com/aman-tff/srm-marche/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/your-username/srm-marche?style=social&label=Fork)](https://github.com/aman-ttf/srm-marche/network/members)
+[![GitHub watchers](https://img.shields.io/github/watchers/your-username/srm-marche?style=social&label=Watch)](https://github.com/aman-ttf/srm-marche/watchers)
 
 **Made with 💙 by Code Cubs for SRM Ghaziabad Students**
 
@@ -406,7 +406,7 @@ Perfect for educational and hackathon projects
 ---
 
 **⚡ Quick Links:**
-[🚀 Live Demo](https://your-netlify-url.netlify.app) • [📖 Docs](#documentation) • [💬 Issues](https://github.com/your-username/srm-marche/issues) • [🔧 Contribute](#contributing) • [📧 Contact](#contact)
+[🚀 Live Demo](https://srm-marche.netlify.app) • [📖 Docs](#documentation) • [💬 Issues](https://github.com/aman-ttf/srm-marche/issues) • [🔧 Contribute](#contributing) • [📧 Contact](#contact)
 
 ---
 
