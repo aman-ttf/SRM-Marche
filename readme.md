@@ -336,9 +336,9 @@ We love contributions! Here's how you can help make SRM Marché even better:
 </div>
 
 ### **📧 Contact**
-- **Project Repository:** [github.com/your-username/srm-marche](https://github.com/aman-ttf/srm-marche)
-- **Live Demo:** [your-netlify-url.netlify.app](https://your-netlify-url.netlify.app)
-- **Report Issues:** [github.com/your-username/srm-marche/issues](https://github.com/aman-ttf/srm-marche/issues)
+- **Project Repository:** [github.com/aman-ttf/srm-marche](https://github.com/aman-ttf/srm-marche)
+- **Live Demo:** [SRM-Marche.netlify.app](https://your-netlify-url.netlify.app)
+- **Report Issues:** [github.com/aman-ttf/srm-marche/issues](https://github.com/aman-ttf/srm-marche/issues)
 - **Team Email:** adminsrmmarche@proton.me
 
 ---
