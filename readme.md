@@ -323,11 +323,10 @@ We love contributions! Here's how you can help make SRM Marché even better:
 <div align="center">
 
 ### **🏆 Code Cubs - Hyperthon 2025**
+### **⚡Team Lead - Aman Maurya**
+### **⚡Team Member - Amrit**
 
-| Member | Role | Contribution |
-|--------|------|-------------|
-| **Aman** | Team Lead & Full-Stack Developer | Frontend Development, Database Integration, Real-time Sync |
-| **Amrit** | Frontend Developer & UI/UX Designer | User Interface Design, Authentication System, Mobile Optimization |
+
 
 *Built with ❤️ for SRM Institute Ghaziabad students*
 
