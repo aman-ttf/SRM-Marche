@@ -323,8 +323,8 @@ We love contributions! Here's how you can help make SRM Marché even better:
 <div align="center">
 
 ### **🏆 Code Cubs - Hyperthon 2025**
-### **⚡Team Lead - Aman Maurya**
-### **⚡Team Member - Amrit**
+### **🌟Team Lead - Aman Maurya**
+### **⚡Team Member - Amrit    **
 
 
 
@@ -335,7 +335,6 @@ We love contributions! Here's how you can help make SRM Marché even better:
 ### **📧 Contact**
 - **Project Repository:** [github.com/aman-ttf/srm-marche](https://github.com/aman-ttf/srm-marche)
 - **Live Demo:** [SRM-Marche.netlify.app](https://your-netlify-url.netlify.app)
-- **Report Issues:** [github.com/aman-ttf/srm-marche/issues](https://github.com/aman-ttf/srm-marche/issues)
 - **Team Email:** adminsrmmarche@proton.me
 
 ---
@@ -372,7 +371,7 @@ We love contributions! Here's how you can help make SRM Marché even better:
 
 ### **🌟 Star this repository if you found it helpful!**
 
-[![GitHub stars](https://img.shields.io/github/stars/your-username/srm-marche?style=social&label=Star)](https://github.com/aman-tff/srm-marche)
+[![GitHub stars](https://img.shields.io/github/stars/your-username/srm-marche?style=social&label=Star)](https://github.com/aman-ttf/srm-marche)
 
 **Made with 💙 by Code Cubs for SRM Ghaziabad Students**
 
@@ -386,11 +385,6 @@ We love contributions! Here's how you can help make SRM Marché even better:
 - **Development Time:** Built for Hyperthon-2025 (48 hours)
 
 </div>
-
----
-
-**⚡ Quick Links:**
-[🚀 Live Demo](https://srm-marche.netlify.app) • [📖 Docs](#documentation) • [💬 Issues](https://github.com/aman-ttf/srm-marche/issues) • [🔧 Contribute](#contributing) • [📧 Contact](#contact)
 
 ---
 
