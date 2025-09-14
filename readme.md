@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![SRM Marché Logo](https://placehold.co/100x200/3B82F6/FFFFFF?text=SRM+Marché)
+![SRM Marché Logo](https://placehold.co/200x100/3B82F6/FFFFFF?text=SRM+Marché)
 
 **Buy & Sell Second Hand Items**  
 *SRM Institute Ghaziabad's trusted marketplace for students*
