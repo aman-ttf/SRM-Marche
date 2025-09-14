@@ -372,9 +372,7 @@ We love contributions! Here's how you can help make SRM Marché even better:
 
 ### **🌟 Star this repository if you found it helpful!**
 
-[![GitHub stars](https://img.shields.io/github/stars/your-username/srm-marche?style=social&label=Star)](https://github.com/aman-tff/srm-marche/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/your-username/srm-marche?style=social&label=Fork)](https://github.com/aman-ttf/srm-marche/network/members)
-[![GitHub watchers](https://img.shields.io/github/watchers/your-username/srm-marche?style=social&label=Watch)](https://github.com/aman-ttf/srm-marche/watchers)
+[![GitHub stars](https://img.shields.io/github/stars/your-username/srm-marche?style=social&label=Star)](https://github.com/aman-tff/srm-marche)
 
 **Made with 💙 by Code Cubs for SRM Ghaziabad Students**
 
