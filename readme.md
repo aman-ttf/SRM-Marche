@@ -220,31 +220,7 @@
 
 ---
 
-## 📸 Screenshots
 
-<div align="center">
-
-### 🖥️ **Desktop Experience**
-![Desktop Homepage](https://via.placeholder.com/800x450/3B82F6/FFFFFF?text=Desktop+Homepage)
-*Homepage with categories and featured items*
-
-![Item Listing](https://via.placeholder.com/800x450/10B981/FFFFFF?text=Item+Listing)
-*Detailed item view with seller information*
-
-### 📱 **Mobile Experience**
-<div style="display: flex; gap: 20px;">
-
-![Mobile Home](https://via.placeholder.com/250x450/3B82F6/FFFFFF?text=Mobile+Home)
-![Mobile Profile](https://via.placeholder.com/250x450/10B981/FFFFFF?text=Mobile+Profile)
-![Mobile Chat](https://via.placeholder.com/250x450/EF4444/FFFFFF?text=Mobile+Chat)
-
-</div>
-
-*Mobile-responsive design works perfectly on all devices*
-
-</div>
-
----
 
 ## 🏗️ Architecture
 
