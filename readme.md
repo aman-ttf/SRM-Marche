@@ -11,7 +11,6 @@
 [![Made with CSS](https://img.shields.io/badge/Made%20with-CSS-blue.svg)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![Made with JavaScript](https://img.shields.io/badge/Made%20with-JavaScript-yellow.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Cross Platform](https://img.shields.io/badge/Cross%20Platform-PWA-green.svg)](https://web.dev/progressive-web-apps/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 [🚀 Live Demo](https://srm-marche.netlify.app/) • [📖 Documentation](#documentation) • [🐛 Report Bug](https://github.com/your-username/srm-marche/issues) • [✨ Request Feature](https://github.com/your-username/srm-marche/issues)
 
@@ -30,7 +29,6 @@
 - [Architecture](#architecture)
 - [Contributing](#contributing)
 - [Team](#team)
-- [License](#license)
 - [Acknowledgments](#acknowledgments)
 
 ---
@@ -340,17 +338,6 @@ We love contributions! Here's how you can help make SRM Marché even better:
 - **Live Demo:** [SRM-Marche.netlify.app](https://your-netlify-url.netlify.app)
 - **Report Issues:** [github.com/aman-ttf/srm-marche/issues](https://github.com/aman-ttf/srm-marche/issues)
 - **Team Email:** adminsrmmarche@proton.me
-
----
-
-## 📜 License
-
-Distributed under the **MIT License**. See `LICENSE` file for more information.
-
-```
-MIT License - Free to use, modify, and distribute
-Perfect for educational and hackathon projects
-```
 
 ---
 
