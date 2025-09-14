@@ -323,8 +323,10 @@ We love contributions! Here's how you can help make SRM Marché even better:
 <div align="center">
 
 ### **🏆 Code Cubs - Hyperthon 2025**
-### **🌟Team Lead - Aman Maurya**
-### **⚡Team Member - Amrit    **
+### **🌟 Team Lead - Aman**
+### **🌟 Team Member - Amrit**
+
+
 
 
 
